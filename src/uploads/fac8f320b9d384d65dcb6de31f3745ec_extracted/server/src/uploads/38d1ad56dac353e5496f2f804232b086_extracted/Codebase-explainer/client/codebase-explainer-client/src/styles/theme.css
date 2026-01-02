@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.app-root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+/* HEADER */
+.app-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+}
+
+.app-header h1 {
+  font-size: 22px;
+}
+
+.app-header p {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.header-right {
+  font-size: 13px;
+  color: #475569;
+}
+
+/* WORKSPACE GRID */
+.workspace {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 260px 1fr 38%;
+  gap: 16px;
+  padding: 16px;
+}
+
+/* PANELS */
+.sidebar,
+.main-panel,
+.right-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  overflow: auto;
+}
+
+/* SIDEBAR */
+.sidebar h3 {
+  margin-bottom: 12px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.user-block {
+  margin-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 10px;
+}
+
+.user-block button {
+  margin-top: 8px;
+  width: 100%;
+}

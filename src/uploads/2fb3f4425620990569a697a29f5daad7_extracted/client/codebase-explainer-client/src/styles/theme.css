@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* ================= LAYOUT ================= */
+
+.app-root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 240px 1fr 380px;
+  gap: 16px;
+  padding: 16px;
+  min-height: 0;
+}
+
+/* ================= HEADER ================= */
+
+.app-header {
+  height: 64px;
+  padding: 0 24px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-header h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.app-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ================= PANELS ================= */
+
+.left-panel,
+.center-panel,
+.right-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+
+.center-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* ================= SIDEBAR ================= */
+
+.left-panel h3 {
+  margin-top: 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.left-panel button {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #f1f5f9;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.left-panel button:hover {
+  background: #e2e8f0;
+}
+
+/* ================= CARDS ================= */
+
+.upload-card,
+.tree-card {
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ================= CODE ================= */
+
+.code-block {
+  background: #020617;
+  color: #e5e7eb;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.code-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ================= BUTTONS ================= */
+
+.primary-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #1e40af;
+}
+
+.secondary-btn {
+  background: #f1f5f9;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ================= EXPLANATION ================= */
+
+.explanation-box {
+  background: #f8fafc;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .app-header,
+body.dark .left-panel,
+body.dark .center-panel,
+body.dark .right-panel,
+body.dark .upload-card,
+body.dark .tree-card {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+body.dark .secondary-btn {
+  background: #1e293b;
+  color: white;
+}
