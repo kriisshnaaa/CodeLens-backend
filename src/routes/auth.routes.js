@@ -11,7 +11,7 @@ router.get(
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:5173",
+    successRedirect: process.env.CLIENT_URL,
     failureRedirect: "/login"
   })
 );
@@ -21,21 +21,19 @@ router.get("/logout", (req, res) => {
     if (err) {
       console.error("Logout error:", err);
     }
-req.user=null;
-    // 🔥 destroy session completely
+
+    // destroy session completely
     req.session.destroy(() => {
-      // 🔥 clear session cookie
+      // clear session cookie
       res.clearCookie("connect.sid");
 
-      // 🔁 redirect back to frontend
-      res.redirect("http://localhost:5173");
+      // redirect back to frontend
+      res.redirect(process.env.CLIENT_URL);
     });
   });
 });
 
-
 router.get("/me", (req, res) => {
-  console.log(req.user);
   res.json(req.user || null);
 });
 
