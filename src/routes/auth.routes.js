@@ -38,6 +38,7 @@ router.get("/logout", (req, res) => {
 const auth = require("../middlewares/auth");
 
 router.get("/me", auth, async(req, res) => {
+  console.log("JWT decoded user:", req.user);
   const user = await User.findByPk(req.user.id, {
     attributes: ["id", "name", "email", "avatar"]
   });
