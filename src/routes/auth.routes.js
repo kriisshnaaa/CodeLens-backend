@@ -16,9 +16,7 @@ router.get(
     // 🔐 create JWT
     const token = jwt.sign(
       {
-        id: req.user.id,
-        email: req.user.email,
-        name: req.user.name
+        id: req.user.id
       },
       process.env.JWT_SECRET,
       { expiresIn: "7d" }
@@ -39,7 +37,10 @@ router.get("/logout", (req, res) => {
 
 const auth = require("../middlewares/auth");
 
-router.get("/me", auth, (req, res) => {
+router.get("/me", auth, async(req, res) => {
+  const user = await User.findByPk(req.user.id, {
+    attributes: ["id", "name", "email", "avatar"]
+  });
   res.json(req.user); 
 });
 
